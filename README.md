@@ -18,13 +18,13 @@ And then run the Bundler
 bundle install
 ```
 
-## Usage
+# Usage
 
 The Scryfall class will have class methods for each query on the Scryfall API. The methods will reflect their path on the official Scryfall API, following the logic of `Scryfall::<HTTP METHOD>_<PATH IN SNAKE CASE>_<VARIATION>`
 
 At first, there are only a few methods available:
 
-# Cards Named (fuzzy and exact)
+## Cards Named (fuzzy and exact)
 
 It searches for cards named almost as the string passed (fuzzy), or with the exact name as the string passed (exact)
 
@@ -36,7 +36,7 @@ Scryfall::get_cards_named_fuzzy "aust commd"
 Scryfall::get_cards_named_exact "Counterspell"
 ```
 
-# Search Query
+## Search Query
 
 It can search a list of cards using the Scryfall syntax
 
@@ -48,6 +48,6 @@ Scryfall::get_cards_search "f:standard t:land id:UW"
 Scryfall::get_cards_search "f:standard t:creature", page: 2
 ```
 
-## Response
+# Response
 
 The default response for all calls are JSON. If a `is_struct: true` is passed as argument, the return will be a `OpenStruct` Hash object.
