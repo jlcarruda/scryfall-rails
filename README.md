@@ -50,4 +50,4 @@ Scryfall::get_cards_search "f:standard t:creature", page: 2
 
 # Response
 
-The default response for all calls are JSON. If a `is_struct: true` is passed as argument, the return will be a `OpenStruct` Hash object.
+The default response for all calls are JSON. If a `to_struct: true` is passed as argument, the return will be a `OpenStruct` Hash object.
