@@ -7,11 +7,11 @@ Gem::Specification.new do |s|
   s.authors     = ["João Lucas"]
   s.email       = 'jlcarruda3@gmail.com'
   s.files       = ["lib/scryfall.rb"]
-  s.exra_rdoc_files = ['README.md']
+  s.extra_rdoc_files = ['README.md']
   s.homepage    = 'https://github.com/jlcarruda/scryfall-rails'
   s.license       = 'MIT'
 
-  
+
   s.add_runtime_dependency "http", 
     ["~> 3"]
 end
