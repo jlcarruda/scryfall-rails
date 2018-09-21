@@ -19,12 +19,12 @@ class Scryfall
     end
   end
   
-  def self.get_cards_named_fuzy(cardname)
-    get '/cards/named', { fuzzy: cardname }
+  def self.get_cards_named_fuzy(cardname, **args)
+    get '/cards/named', { fuzzy: cardname }, args
   end
 
-  def self.get_cards_named_exact(cardname)
-    get '/cards/named', { exact: cardname }
+  def self.get_cards_named_exact(cardname, **args)
+    get '/cards/named', { exact: cardname }, args
   end
 
   def self.get_cards_search(query, **args)
