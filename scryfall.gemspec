@@ -6,13 +6,11 @@ Gem::Specification.new do |s|
   s.description = "A simple way to connect with Scryfall API and get MTG Card info easily"
   s.authors     = ["João Lucas"]
   s.email       = 'jlcarruda3@gmail.com'
-  s.files       = ["lib/scryfall.rb"]
+  s.files       = ["lib/cards.rb", "lib/error_handler.rb", "lib/errors.rb", "lib/api.rb", "lib/base.rb"]
   s.extra_rdoc_files = ['README.md']
   s.homepage    = 'https://github.com/jlcarruda/scryfall-rails'
   s.license       = 'MIT'
 
-
   s.add_development_dependency "rspec", "~> 3.2"
-  s.add_runtime_dependency "http",
-    ["~> 3"]
+  s.add_runtime_dependency "http", ["~> 3"]
 end
