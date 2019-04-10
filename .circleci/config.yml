@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: 'circleci/ruby:latest'
     steps:
+      - checkout
       - run:
           name: Verify directory
           command: pwd
