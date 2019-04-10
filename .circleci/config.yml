@@ -16,9 +16,11 @@ jobs:
       - run:
           name: Which Bundle?
           command: bundle -v
+      - run:
+          name: Run Tests
+          command: bundle exec rspec
 workflows:
   version: 2
-  test-deploy:
+  test:
     jobs:
-      # - build
       - test
