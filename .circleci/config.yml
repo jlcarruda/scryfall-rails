@@ -27,7 +27,9 @@ jobs:
       - run:
           name: Setup Rubygems
           command: bash .circleci/setup-rubygems.sh
-      - build
+      - run:
+          name: Run Gem build
+          command: gem build scryfall
       - run:
           name: Publish Gem
           command: gem push "scryfall-$(git describe --tags).gem"
