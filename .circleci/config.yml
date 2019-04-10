@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Run Gem build
-        command: gem build scryfall.gemspec
+          name: Run Gem build
+          command: gem build scryfall.gemspec
   test:
     docker:
       - image: 'circleci/ruby:latest'
@@ -20,5 +20,5 @@ workflows:
   version: 2
   test-deploy:
     jobs:
-      - build
+      # - build
       - test
