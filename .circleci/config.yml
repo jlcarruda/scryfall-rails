@@ -1,14 +1,15 @@
 version: 2.1
 jobs:
   build:
+    docker:
+      - image: 'circleci/ruby:latest'
     steps:
-      run: "gem build scryfall"
+      run: gem build scryfall
   test:
     docker:
       - image: 'circleci/ruby:latest'
     steps:
       - checkout
-
       - run:
           name: Which Bundle?
           command: bundle -v
