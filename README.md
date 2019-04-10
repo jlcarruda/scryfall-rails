@@ -24,7 +24,7 @@ The Scryfall module have classes for each query on the Scryfall API. Each class 
 
 At first, there are only a few methods available:
 
-#Cards
+# Cards
 ### Named (fuzzy and exact)
 
 It searches for cards named almost as the string passed (fuzzy), or with the exact name as the string passed (exact)

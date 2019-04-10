@@ -6,12 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Verify directory
-          command: pwd
-      - run:
-          name: Verify files
-          command: ls -la
-      - run:
           name: Run Gem build
           command: gem build scryfall
   test:
@@ -27,7 +21,7 @@ jobs:
           command: rspec
 workflows:
   version: 2
-  test:
+  build-and-test:
     jobs:
       - build
       - test
