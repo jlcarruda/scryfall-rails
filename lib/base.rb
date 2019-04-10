@@ -1,11 +1,10 @@
 module Scryfall
 	class Base
-		require 'http'
-		require 'ostruct'
-		require 'json'
-		require 'error_handler'
-		require 'resolv-replace'
+		require "api"
 
-		include ErrorHandler
+		protected
+		def self.api
+			@api ||= API.new
+		end
 	end
 end

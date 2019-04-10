@@ -1,6 +1,11 @@
 module Scryfall
-  require 'base'
-  class API < Base
+  class API
+    require 'http'
+    require 'ostruct'
+    require 'json'
+    require 'error_handler'
+    require 'resolv-replace'
+
     def initialize(url = 'https://api.scryfall.com');
       @url = url
     end

@@ -1,27 +1,22 @@
 module Scryfall
-  require 'api'
+  require 'base'
   class Cards < Base
-
-    def initialize
-      @api = API.new
+    def self.named_fuzzy(cardname, **args)
+      api.get '/cards/named', { fuzzy: cardname }, args
     end
 
-    def named_fuzzy(cardname, **args)
-      @api.get '/cards/named', { fuzzy: cardname }, args
+    def self.named_exact(cardname, **args)
+      api.get '/cards/named', { exact: cardname }, args
     end
 
-    def named_exact(cardname, **args)
-      @api.get '/cards/named', { exact: cardname }, args
-    end
-
-    def search(query, **args)
+    def self.search(query, **args)
       params = { q: query.encode }
 
       if args.has_key?(:page) && args.page >= 1
         params['page'] = args.page
       end
 
-      @api.get '/cards/search', params, args
+      api.get '/cards/search', params, args
     end
   end
 end
