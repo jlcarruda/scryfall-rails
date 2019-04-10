@@ -1,0 +1,50 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: 'circleci/ruby:latest'
+    steps:
+      - checkout
+      - run:
+          name: Run Gem build
+          command: gem build scryfall
+  test:
+    docker:
+      - image: 'circleci/ruby:latest'
+    steps:
+      - checkout
+      - run:
+          name: Installing Gems
+          command: gem install rspec http
+      - run:
+          name: Run Tests
+          command: rspec
+  deploy:
+    docker:
+      - image: 'circleci/ruby:latest'
+    steps:
+      - checkout
+      - run:
+          name: Setup Rubygems
+          command: bash .circleci/setup-rubygems.sh
+      - run:
+          name: Run Gem build
+          command: gem build scryfall
+      - run:
+          name: Publish Gem
+          command: gem push "scryfall-$(git describe --tags).gem"
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
+      - test
+      - deploy:
+          requires:
+            - build
+            - test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
