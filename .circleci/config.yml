@@ -4,9 +4,10 @@ jobs:
     docker:
       - image: 'circleci/ruby:latest'
     steps:
+      - checkout
       - run:
         name: Run Gem build
-        command: gem build scryfall
+        command: gem build scryfall.gemspec
   test:
     docker:
       - image: 'circleci/ruby:latest'
@@ -15,10 +16,9 @@ jobs:
       - run:
           name: Which Bundle?
           command: bundle -v
-
 workflows:
   version: 2
-  test:
+  test-deploy:
     jobs:
       - build
       - test
