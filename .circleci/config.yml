@@ -8,6 +8,9 @@ jobs:
           name: Verify directory
           command: pwd
       - run:
+          name: Verify files
+          command: ls -la
+      - run:
           name: Run Gem build
           command: gem build scryfall
   test:
