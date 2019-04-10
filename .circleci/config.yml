@@ -4,7 +4,9 @@ jobs:
     docker:
       - image: 'circleci/ruby:latest'
     steps:
-      run: gem build scryfall
+      - run:
+        name: Run Gem build
+        command: gem build scryfall
   test:
     docker:
       - image: 'circleci/ruby:latest'
