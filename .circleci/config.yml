@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: 'circleci/ruby:latest'
+    steps:
+      - checkout
+      - run: bundle exec rspec
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
