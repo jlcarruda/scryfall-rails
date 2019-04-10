@@ -1,5 +1,5 @@
 module Scryfall
-  require 'base'
+  require 'scryfall/base'
   class Cards < Base
     def self.named_fuzzy(cardname, **args)
       api.get '/cards/named', { fuzzy: cardname }, args

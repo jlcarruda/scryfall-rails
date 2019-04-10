@@ -1,4 +1,4 @@
-require "cards"
+require "scryfall/cards"
 
 describe Scryfall::Cards do
 

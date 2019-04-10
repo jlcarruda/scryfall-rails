@@ -1,6 +1,6 @@
 module Scryfall
 	class Base
-		require "api"
+		require "scryfall/api"
 
 		protected
 		def self.api
