@@ -5,6 +5,9 @@ jobs:
       - image: 'circleci/ruby:latest'
     steps:
       - run:
+          name: Verify directory
+          command: pwd
+      - run:
           name: Run Gem build
           command: gem build scryfall
   test:
