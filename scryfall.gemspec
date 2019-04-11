@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'scryfall'
-  s.version     = '0.1.8'
+  s.version     = '0.2.8'
   s.date        = '2018-09-20'
   s.summary     = "A gem made to contact Scryfall API"
   s.description = "A simple way to connect with Scryfall API and get MTG Card info easily"
@@ -12,6 +12,5 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.add_development_dependency "rspec", "~> 3.2"
-  s.add_development_dependency "pry"
   s.add_runtime_dependency "http", ["~> 3"]
 end
