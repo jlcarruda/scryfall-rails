@@ -12,5 +12,6 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.add_development_dependency "rspec", "~> 3.2"
+  s.add_development_dependency "pry"
   s.add_runtime_dependency "http", ["~> 3"]
 end

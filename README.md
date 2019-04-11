@@ -25,7 +25,7 @@ The Scryfall module have classes for each query on the Scryfall API. Each class 
 
 At first, there are only a few methods available:
 
-# Cards
+# ::Cards
 ### Named (fuzzy and exact)
 
 It searches for cards named almost as the string passed (fuzzy), or with the exact name as the string passed (exact)
@@ -49,6 +49,28 @@ Scryfall::Cards.search "f:standard t:land id:UW"
 # It can be passed the page of the search. Each page of data has a maximum of 175 cards
 Scryfall::Cards.search "f:standard t:creature", page: 2
 ```
+
+### By IDs
+
+The `Scryfall::Cards` class has methods to retrieve cards by its identifier in multiple platforms.
+
+```ruby
+# Returning the "Yargle, Glutton of Urborg" card by its IDs
+
+# can be fetched by its MTGO id ...
+Scryfall::Cards.with_mtgo_id 67691
+
+# ... by its Arena id ...
+Scryfall::Cards.with_arena_id 67330
+
+# ... by its TCG Player id ...
+Scryfall::Cards.with_tcgplayer_id 164756
+
+# ... or by its unique ID.
+Scryfall::Cards.with_id "645cfc1b-76f2-4823-9fb0-03cb009f8b32"
+```
+
+Cards that are not on those systems can't be retrieved by its ids. For example, the **Austere Command** card can't be fetched by an Arena Id because the card isn't in the game.
 
 # Responses
 
