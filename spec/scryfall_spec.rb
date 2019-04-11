@@ -37,6 +37,15 @@ describe Scryfall::Cards do
 			@tcgplayer_id = 164756
 		end
 
+		it "should get a card by ID" do
+			resp = Scryfall::Cards.with_id @card_id
+
+			expect(resp["object"]).to eql("card")
+			expect(resp["tcgplayer_id"]).to eql(@tcgplayer_id)
+			expect(resp["mtgo_id"]).to eql(@mtgo_id)
+			expect(resp["arena_id"]).to eql(@arena_id)
+		end
+
 		it "should get a card by its MTGO id" do
 			resp = Scryfall::Cards.with_mtgo_id @mtgo_id
 
