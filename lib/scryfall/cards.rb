@@ -26,5 +26,9 @@ module Scryfall
     def self.with_arena_id(id, **args)
       api.get "/cards/arena/#{id}", {}, args
     end
+
+    def self.with_tcgplayer_id(id, **args)
+      api.get "/cards/tcgplayer/#{id}", {}, args
+    end
   end
 end
