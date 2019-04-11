@@ -30,17 +30,27 @@ describe Scryfall::Cards do
 
 	describe "Cards By IDs" do
 		before do
-			@card_id = "bef16a71-5ed2-4f30-a844-c02a0754f679" #Austere Command Id
-			@mtgo_id = 65899 # Austere Command mtgo_id
+			# Yargle's IDs
+			@card_id = "645cfc1b-76f2-4823-9fb0-03cb009f8b32"
+			@mtgo_id = 67691
+			@arena_id = 67330
+			@tcgplayer_id = 164756
 		end
 
 		it "should get a card by its MTGO id" do
-			resp = Scryfall::Cards.mtgo_id @mtgo_id
+			resp = Scryfall::Cards.with_mtgo_id @mtgo_id
 
 			expect(resp["id"]).to eql(@card_id)
 			expect(resp["object"]).to eql("card")
 			expect(resp["mtgo_id"]).to eql(@mtgo_id)
 		end
 
+		it "should get a card by its Arena id" do
+			resp = Scryfall::Cards.with_arena_id @arena_id
+
+			expect(resp["id"]).to eql(@card_id)
+			expect(resp["object"]).to eql("card")
+			expect(resp["arena_id"]).to eql(@arena_id)
+		end
 	end
 end

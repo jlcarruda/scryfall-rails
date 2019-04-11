@@ -19,8 +19,12 @@ module Scryfall
       api.get '/cards/search', params, args
     end
 
-    def self.mtgo_id(id, **args)
+    def self.with_mtgo_id(id, **args)
       api.get "/cards/mtgo/#{id}", {}, args
+    end
+
+    def self.with_arena_id(id, **args)
+      api.get "/cards/arena/#{id}", {}, args
     end
   end
 end
