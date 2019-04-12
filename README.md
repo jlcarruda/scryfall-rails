@@ -26,6 +26,9 @@ The Scryfall module have classes for each query on the Scryfall API. Each class 
 At first, there are only a few methods available:
 
 # ::Cards
+
+Using ```require scryfall/cards```, you will have access to the ```Scryfall::Cards``` class. It encapsulates the logics on the API that returns a set of cards, or an object representing a single one.
+
 ### Named (fuzzy and exact)
 
 It searches for cards named almost as the string passed (fuzzy), or with the exact name as the string passed (exact)
