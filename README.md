@@ -27,7 +27,7 @@ At first, there are only a few methods available:
 
 # ::Cards
 
-Using ```require scryfall/cards```, you will have access to the ```Scryfall::Cards``` class. It encapsulates the logics on the API that returns a set of cards, or an object representing a single one.
+Using ```require "scryfall/cards"```, you will have access to the ```Scryfall::Cards``` class. It encapsulates the logics on the API that returns a set of cards, or an object representing a single one.
 
 ### Named (fuzzy and exact)
 
