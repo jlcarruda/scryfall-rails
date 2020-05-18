@@ -4,23 +4,23 @@ describe Scryfall::Cards do
 
 	describe "Cards By Name" do
 		before do
-			@card_id = "83a0f2eb-2f6d-4aaa-b7a9-ea06d5de7eca"
+			@card_id = "fd99bce1-ce39-464b-8e61-2631eb3ed6f6"
 		end
 
 		it "should get a card by exact name" do
-			resp = Scryfall::Cards.named_exact "Sol Ring"
+			resp = Scryfall::Cards.named_exact "Tolarian Academy"
 
 			expect(resp["id"]).to eql(@card_id)
 		end
 
 		it "should get a card by fuzzy name" do
-			resp = Scryfall::Cards.named_fuzzy "solring"
+			resp = Scryfall::Cards.named_fuzzy "tolarianacademy"
 
 			expect(resp["id"]).to eql(@card_id)
 		end
 
 		it "should get a list of cards by using search" do
-			resp = Scryfall::Cards.search "t:artifact solring"
+			resp = Scryfall::Cards.search "t:land tolarianacademy"
 
 			expect(resp["object"]).to eql("list")
 			expect(resp["total_cards"]).to eql(1)
