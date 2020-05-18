@@ -1,6 +1,11 @@
 # scryfall-rails
 [![Gem Version](https://badge.fury.io/rb/scryfall.svg)](https://badge.fury.io/rb/scryfall)
+
+Master
 [![CircleCI](https://circleci.com/gh/jlcarruda/scryfall-rails/tree/master.svg?style=svg)](https://circleci.com/gh/jlcarruda/scryfall-rails/tree/master)
+
+Development
+[![CircleCI](https://circleci.com/gh/jlcarruda/scryfall-rails/tree/development.svg?style=svg)](https://circleci.com/gh/jlcarruda/scryfall-rails/tree/development)
 
 A simple gem that utilizes the Scryfall API to get Magic: the Gathering card information.
 
