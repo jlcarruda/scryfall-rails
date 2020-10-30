@@ -9,7 +9,6 @@ Development
 
 A simple gem that utilizes the Scryfall API to get Magic: the Gathering card information.
 
-
 ## Instalation
 
 It will only be needed to specify it on your Gemfile:
