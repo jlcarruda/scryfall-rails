@@ -3,7 +3,6 @@ require 'json'
 module ErrorHandler
   def self.included(clazz)
     clazz.class_eval do
-
     end
   end
 

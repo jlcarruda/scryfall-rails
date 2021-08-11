@@ -12,9 +12,7 @@ module Scryfall
     def self.search(query, **args)
       params = { q: query.encode }
 
-      if args.has_key?(:page) && args.page >= 1
-        params['page'] = args.page
-      end
+      params['page'] = args.page if args.has_key?(:page) && args.page >= 1
 
       api.get '/cards/search', params, **args
     end
