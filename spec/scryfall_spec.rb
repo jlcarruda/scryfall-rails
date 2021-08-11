@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'scryfall/cards'
 
 describe Scryfall::Cards do
