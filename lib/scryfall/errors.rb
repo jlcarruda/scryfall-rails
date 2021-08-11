@@ -1,4 +1,4 @@
 module Scryfall
-	class ResponseError < StandardError
-	end
+  class ResponseError < StandardError
+  end
 end
