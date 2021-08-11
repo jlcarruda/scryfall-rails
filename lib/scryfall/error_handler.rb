@@ -3,14 +3,14 @@
 require 'json'
 
 module ErrorHandler
-  def self.included(clazz)
-    clazz.class_eval do
+  def self.included(klass)
+    klass.class_eval do
     end
   end
 
   private
 
-  def response_error(_e)
+  def response_error(_err)
     raise Scryfall::ResponseError
   end
 end
