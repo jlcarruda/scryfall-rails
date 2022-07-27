@@ -1,10 +1,11 @@
-module Scryfall
-	class Base
-		require "scryfall/api"
+# frozen_string_literal: true
 
-		protected
-		def self.api
-			@api ||= API.new
-		end
-	end
+module Scryfall
+  class Base
+    require 'scryfall/api'
+
+    def self.api
+      @api ||= API.new
+    end
+  end
 end
