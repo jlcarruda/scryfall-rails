@@ -36,6 +36,8 @@ describe Scryfall::Cards do
       @mtgo_id = 67_691
       @arena_id = 67_330
       @tcgplayer_id = 164_756
+      @multiverse_id = 443001
+      @cardmarket_id = 355353
     end
 
     it 'should get a card by ID' do
@@ -45,6 +47,8 @@ describe Scryfall::Cards do
       expect(resp['tcgplayer_id']).to eql(@tcgplayer_id)
       expect(resp['mtgo_id']).to eql(@mtgo_id)
       expect(resp['arena_id']).to eql(@arena_id)
+      expect(resp['multiverse_ids']).to include(@multiverse_id)
+      expect(resp['cardmarket_id']).to eql(@cardmarket_id)
     end
 
     it 'should get a card by its MTGO id' do
@@ -69,6 +73,22 @@ describe Scryfall::Cards do
       expect(resp['id']).to eql(@card_id)
       expect(resp['object']).to eql('card')
       expect(resp['tcgplayer_id']).to eql(@tcgplayer_id)
+    end
+
+    it 'should get a card by its Multiverse id' do
+      resp = Scryfall::Cards.with_multiverse_id @multiverse_id
+
+      expect(resp['id']).to eql(@card_id)
+      expect(resp['object']).to eql('card')
+      expect(resp['multiverse_ids']).to include(@multiverse_id)
+    end
+
+    it 'should get a card by its Cardmarket id' do
+      resp = Scryfall::Cards.with_cardmarket_id @cardmarket_id
+
+      expect(resp['id']).to eql(@card_id)
+      expect(resp['object']).to eql('card')
+      expect(resp['cardmarket_id']).to eql(@cardmarket_id)
     end
   end
 end

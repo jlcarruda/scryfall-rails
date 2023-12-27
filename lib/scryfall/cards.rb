@@ -31,6 +31,14 @@ module Scryfall
       api.get "/cards/tcgplayer/#{id}", {}, **args
     end
 
+    def self.with_multiverse_id(id, **args)
+      api.get "/cards/multiverse/#{id}", {}, **args
+    end
+
+    def self.with_cardmarket_id(id, **args)
+      api.get "/cards/cardmarket/#{id}", {}, **args
+    end
+
     def self.with_id(id, **args)
       api.get "/cards/#{id}", {}, **args
     end
