@@ -73,6 +73,12 @@ Scryfall::Cards.with_arena_id 67330
 # ... by its TCG Player id ...
 Scryfall::Cards.with_tcgplayer_id 164756
 
+# ... by its Multiverse id ...
+Scryfall::Cards.with_multiverse_id 443001
+
+# ... by its Cardmarket id ...
+Scryfall::Cards.with_cardmarket_id 355353
+
 # ... or by its unique ID.
 Scryfall::Cards.with_id "645cfc1b-76f2-4823-9fb0-03cb009f8b32"
 ```
