@@ -13,7 +13,9 @@ module Scryfall
     end
 
     def get(path = '', params = {}, **args)
-      res = HTTP.get(mount_uri(path), params: params)
+      res = HTTP
+        .headers('Accept' => '*/*', 'User-Agent' => "scryfall-rails/#{Scryfall::VERSION}")
+        .get(mount_uri(path), params: params)
 
       if args.key?(:to_struct) && args[:to_struct] == true
         JSON.parse res, object_class: OpenStruct

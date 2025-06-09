@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'scryfall/cards'
+require 'scryfall/version'
 require 'scryfall/catalog'
 
 describe Scryfall::Cards do
