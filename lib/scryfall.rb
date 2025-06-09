@@ -2,4 +2,5 @@
 
 module Scryfall
   require 'scryfall/cards'
+  require 'scryfall/catalog'
 end

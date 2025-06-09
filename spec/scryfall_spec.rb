@@ -2,6 +2,7 @@
 
 require 'scryfall/cards'
 require 'scryfall/version'
+require 'scryfall/catalog'
 
 describe Scryfall::Cards do
   describe 'Cards By Name' do
@@ -90,6 +91,148 @@ describe Scryfall::Cards do
       expect(resp['id']).to eql(@card_id)
       expect(resp['object']).to eql('card')
       expect(resp['cardmarket_id']).to eql(@cardmarket_id)
+    end
+  end
+
+  describe 'Catalog' do
+    it 'should get a list of card names' do
+      resp = Scryfall::Catalog.card_names
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Tolarian Academy')
+    end
+
+    it 'should get a list of artist names' do
+      resp = Scryfall::Catalog.artist_names
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Mark Poole')
+    end
+
+    it 'should get a list of word bank' do
+      resp = Scryfall::Catalog.word_bank
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('flying')
+    end
+
+    it 'should get a list of supertypes' do
+      resp = Scryfall::Catalog.supertypes
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Basic')
+    end
+
+    it 'should get a list of card types' do
+      resp = Scryfall::Catalog.card_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Creature')
+    end
+
+    it 'should get a list of artifact types' do
+      resp = Scryfall::Catalog.artifact_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Equipment')
+    end
+
+    it 'should get a list of battle types' do
+      resp = Scryfall::Catalog.battle_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Siege')
+    end
+
+    it 'should get a list of creature types' do
+      resp = Scryfall::Catalog.creature_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Human')
+    end
+
+    it 'should get a list of enchantment types' do
+      resp = Scryfall::Catalog.enchantment_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Aura')
+    end
+
+    it 'should get a list of land types' do
+      resp = Scryfall::Catalog.land_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Plains')
+    end
+
+    it 'should get a list of planeswalker types' do
+      resp = Scryfall::Catalog.planeswalker_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Ajani')
+    end
+
+    it 'should get a list of spell types' do
+      resp = Scryfall::Catalog.spell_types
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Arcane')
+    end
+
+    it 'should get a list of powers' do
+      resp = Scryfall::Catalog.powers
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('1')
+    end
+
+    it 'should get a list of toughnesses' do
+      resp = Scryfall::Catalog.toughnesses
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('1')
+    end
+
+    it 'should get a list of loyalties' do
+      resp = Scryfall::Catalog.loyalties
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('1')
+    end
+
+    it 'should get a list of keyword abilities' do
+      resp = Scryfall::Catalog.keyword_abilities
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Deathtouch')
+    end
+
+    it 'should get a list of keyword actions' do
+      resp = Scryfall::Catalog.keyword_actions
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Amass')
+    end
+
+    it 'should get a list of ability words' do
+      resp = Scryfall::Catalog.ability_words
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Battalion')
+    end
+
+    it 'should get a list of flavor words' do
+      resp = Scryfall::Catalog.flavor_words
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('Allies')
+    end
+
+    it 'should get a list of watermarks' do
+      resp = Scryfall::Catalog.watermarks
+
+      expect(resp['object']).to eql('catalog')
+      expect(resp['data']).to include('azorius')
     end
   end
 end
